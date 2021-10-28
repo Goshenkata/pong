@@ -1,0 +1,25 @@
+if ((ball.getX() <= 0 || ball.getX() >= WIDTH-25)) {
+
+            //hits upper or lower screen;
+            ball.reverse();
+            System.out.println(ball.getX());
+            System.out.println(ball.getY());
+
+        } else if ((ball.getX() <= playerOne.getX() + Player.WIDTH && ball.getY() <= playerOne.getY() && ball.getY() >= playerOne.getY() + Player.HEIGHT)) {
+            ball.reverse();
+        } else if ((ball.getX() <= playerTwo.getX() + Player.WIDTH && ball.getY() <= playerTwo.getY() && ball.getY() >= playerTwo.getY() + Player.HEIGHT)) {
+            ball.reverse();
+        } else {
+            if (ball.getY() >= HEIGHT) {
+                playerOne.incrementScore();
+                ball.reverse();
+                ball.setX((WIDTH / 2) - Ball.SIZE);
+                ball.setY((HEIGHT / 2) - Ball.SIZE);
+            }
+            if (ball.getY() <= 0) {
+                playerOne.incrementScore();
+                ball.reverse();
+                ball.setX((WIDTH / 2) - Ball.SIZE);
+                ball.setY((HEIGHT / 2) - Ball.SIZE);
+            }
+        }
